@@ -1,13 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Login";
 }
+<head>
+    <link rel="stylesheet" href="css/login.css">
+</head>
 
 <div class="login-container">
     <div class="login-box">
         <h2>Log ind</h2>
         <form method="post" action="/Login">
             <div class="input-group">
-                <label for="username">Brugernavn</label>
+                <label for="username" class="BrugernavnLabel">Brugernavn</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="input-group">

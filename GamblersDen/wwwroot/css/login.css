@@ -1,6 +1,7 @@
 ﻿
 
 /* LAYOUT BABY */
+/* Generelle indstillinger */
 * {
     margin: 0;
     padding: 0;
@@ -8,20 +9,12 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f7f7f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #333;
-}
 
 .login-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
 }
 
@@ -83,3 +76,4 @@ body {
     .login-button:hover {
         background-color: #0056b3;
     }
+
