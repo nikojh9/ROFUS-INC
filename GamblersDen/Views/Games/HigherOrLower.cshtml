@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Higher or Lower";
+}
+
+<h1>Higher or Lower</h1>
+
+<p>Current Number: <strong>@ViewBag.CurrentNumber</strong></p>
+<p>Computer guess test: @ViewBag.ComputerGuess</p>
+
+<form method="post">
+    <button type="submit" name="choice" value="Higher">Higher</button>
+    <button type="submit" name="choice" value="Lower">Lower</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <p>Result: <strong>@ViewBag.Result</strong></p>
+}
