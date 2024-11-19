@@ -36,10 +36,10 @@ app.UseSession();
 // Globalt middleware til at tjekke om brugeren er logget ind
 app.Use(async (context, next) =>
 {
-    // Tjekker om sessionen indeholder en "UserLoggedIn"-værdi
+    // Tjekker om sessionen indeholder en "IsLoggedIn"-værdi
     var isLoggedIn = context.Session.GetString("IsLoggedIn") != null;
 
-    // Hvis ikke logget ind, omdiriger til login-siden
+    // Hvis ikke logget ind omdiriger til login-siden
     if (!isLoggedIn && context.Request.Path != "/Login" && !context.Request.Path.StartsWithSegments("/Login"))
     {
         context.Response.Redirect("/Login");
