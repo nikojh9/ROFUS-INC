@@ -4,21 +4,25 @@ namespace GamblersDen.Controllers
 {
     public class GamesController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-
-
         [HttpGet]
-        [Route("/games/Coinflip")]
+        [Route("/games/coinflip")]
         public IActionResult Coinflip()
         {
-            return View();
+            // Passing the state of the animation (if it's active)
+            var flipClass = TempData["FlipClass"]?.ToString() ?? "";
+            return View(model: flipClass); // Passing the flip class to the view
         }
 
+        [HttpPost]
+        [Route("/games/coinflip")]
+        public IActionResult CoinflipPost()
+        {
+            // Set TempData to trigger the coin flip animation
+            TempData["FlipClass"] = "flipping";
 
+            // Redirect to the GET method to reload the page and show the animation
+            return RedirectToAction("Coinflip");
+        }
     }
 
 
